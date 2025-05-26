@@ -1,46 +1,34 @@
-# Flask Auth0 Login App
+# Flask Auth0 App
 
-This is a Flask web application integrated with [Auth0](https://auth0.com/) to enable secure login and logout functionality. It also features a protected page accessible only to authenticated users.
+**Name:** Satyam Panseriya 
+
+**Student ID:** 041128392  
+**Email:** pans0012@algonquinlive.com  
+**Video DEMO:** 
+
+This is a simple Flask web application that integrates Auth0 for secure login, logout, and route protection. It demonstrates user authentication using OAuth2 and displays user profile information after login.
 
 ---
-
-## Table of Contents
-
-- [Features](#features)
-- [Demo Video](#demo-video)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Auth0 Setup](#auth0-setup)
-- [Environment Variables](#environment-variables)
-- [Running the App](#running-the-app)
-- [File Structure](#file-structure)
-- [What I Learned](#what-i-learned)
-- [License](#license)
 
 ---
 
 ## Features
 
--  Login with Auth0
--  Logout securely
--  Protected route (`/protected`) for authenticated users only
--  Session-based user profile display
+-  OAuth2 authentication with Auth0
+-  Protected routes using session-based access
+-  User profile display (name, picture, email)
+-  Logout support with session cleanup
+-  Environment-based configuration using `.env`
 
 ---
 
-## Demo Video
+##  Prerequisites
 
-[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+Before you begin, make sure you have the following:
 
-> Replace `YOUR_VIDEO_ID_HERE` with your actual YouTube video ID.
-
----
-
-## Prerequisites
-
-- Python 3.7+
-- A free [Auth0](https://auth0.com/) account
-- `pip` for Python package management
+- ✅ Python 3.7 or later
+- ✅ A free [Auth0](https://auth0.com/) account
+- ✅ A terminal and basic understanding of Python
 
 ---
 
@@ -51,7 +39,83 @@ This is a Flask web application integrated with [Auth0](https://auth0.com/) to e
    ```bash
    git clone https://github.com/yourusername/flask-auth0-login-app.git
    cd flask-auth0-login-app
+   
+Create a virtual environment (recommended)
 
-   Create and activate a virtual environment (recommended)
+   ```bash
+
+    python -m venv venv
+    source venv/bin/activate     # macOS/Linux
+    venv\Scripts\activate        # Windows
+   ```
+
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+
+ Auth0 Setup
+
+1. Go to your Auth0 Dashboard.
+
+2. Create a new Regular Web Application.
+
+3. In the application Settings, set the following:
+
+Allowed Callback URLs:
+
+```bash
+http://localhost:3000/callback
+```
+
+Allowed Logout URLs:
+
+```bash
+http://localhost:3000
+```
+
+Allowed Web Origins:
+
+```bash
+http://localhost:3000
+```
+
+Copy the following values for later use:
+
+✅ Client ID
+
+✅ Client Secret
+
+✅ Domain (e.g., your-tenant-name.auth0.com)
+
+## Environment Configuration
+
+Create a `.env` file in the root directory of your project and add the following variables:
+
+```env
+AUTH0_CLIENT_ID=<Your Auth0 Client ID>
+AUTH0_CLIENT_SECRET=<Your Auth0 Client Secret>
+AUTH0_DOMAIN=<Your Auth0 Domain>
+APP_SECRET_KEY=<Your Generated Secret Key>
+```
+
+### Generate a secure secret key:
+```bash
+openssl rand -hex 32
+```
+
+Copy the result and paste it into your .env file as the value for APP_SECRET_KEY.
+
+
+ Running the App
+To start the application, run:
+
+```bash
+python3 server.py
+```
+Then visit http://localhost:3000 in your browser.
 
 
