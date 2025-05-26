@@ -51,3 +51,7 @@ This is a Flask web application integrated with [Auth0](https://auth0.com/) to e
    ```bash
    git clone https://github.com/yourusername/flask-auth0-login-app.git
    cd flask-auth0-login-app
+
+   Create and activate a virtual environment (recommended)
+
+
