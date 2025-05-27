@@ -1,14 +1,12 @@
 # Flask Auth0 App
 
-**Name:** Satyam Panseriya 
+**Name:** Satyam Panseriya
 
-**Student ID:** 041128392  
-**Email:** pans0012@algonquinlive.com  
-**Video DEMO:** 
+**Student ID :** 041128392  
+**Email :** pans0012@algonquinlive.com  
+**Video Link :** https://youtu.be/6t3Dp5O9oZ0
 
 This is a simple Flask web application that integrates Auth0 for secure login, logout, and route protection. It demonstrates user authentication using OAuth2 and displays user profile information after login.
-
----
 
 ---
 
